@@ -1,8 +1,8 @@
 # `etk`-Foundry Template
 
 Most smart contract development tooling is geared towards using compiled
-languages, like Solidity. These tools are extremely important when it comes to
-testing and debugging contracts, so we have developed a template for using
+languages, such as Solidity. These tools are extremely important when it comes
+to testing and debugging contracts, so we have developed a template for using
 `etk` with the [Forge][forge] testing framework from [Foundry][forge].
 
 ## Getting Started
@@ -20,14 +20,15 @@ around the fact that Forge doesn't support custom compiler definitions. The
 most notable contribution is the script `builder-wrapper` which assembles the
 `etk` project, then injects the assembled bytecode into the testing contract
 defined at `test/Contract.t.sol.in`. Since `test/Contract.t.sol` is overwritten
-each time `build-wrapper` is called, it's important that tests are written in
-the `test/Contract.t.sol.in` file.
+each time `build-wrapper` is called, it's important to ensure that all
+modifications are made to the `test/Contract.t.sol.in` file.
 
 To run a forge command, call the `builder-wrapper` script with the same arguments
 as Forge:
 
 ```console
 $ ./build-wrapper test
+
 [⠢] Compiling...
 No files changed, compilation skipped
 
