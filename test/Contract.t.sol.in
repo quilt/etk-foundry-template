@@ -12,7 +12,7 @@ contract ContractTest is Test {
         address returned;
 
         assembly {
-            returned := create(0, add(bytecode, 32), bytecode)
+            returned := create(0, add(bytecode, 32), mload(bytecode))
         }
 
         unit = returned;
